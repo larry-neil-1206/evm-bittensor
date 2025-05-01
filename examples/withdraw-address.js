@@ -25,7 +25,7 @@ function ss58ToH160(ss58Address) {
 
 async function main() {
   // This is the address that we have private key for
-  const ss58Address = '5H3qhPGzKMNV9fTPuizxzp8azyFRMd4BnheSuwN9Qxb5Cz3u';
+  const ss58Address = '5FWsaLmUYuYBikfYYWVysdCHoKTkm87AwEXhFKLqcfLMVQvV';
 
   // This is the mirror address that we don't have private key for, but which will hold Eth balance
   // until the withdraw is executed

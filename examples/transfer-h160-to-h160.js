@@ -1,10 +1,10 @@
 const { ethers } = require('ethers');
 
 // Enter your destination address here:
-const destinationEthereumAddress = '0x2B5AD5c4795c026514f8317c7a215E218DcCD6cF';
+const destinationEthereumAddress = '0xA71214dF5cF123E495635f79833cBb534B7AA25F';
 
 // PROTECT YOUR PRIVATE KEYS WELL, NEVER COMMIT THEM TO GITHUB OR SHARE WITH ANYONE
-const { ethPrivateKey, rpcUrl } = require('../config.js');
+const { ethPrivateKey, rpcUrl } = require('./config.js');
 
 // Connect to the Subtensor node
 const provider = new ethers.JsonRpcProvider(rpcUrl);

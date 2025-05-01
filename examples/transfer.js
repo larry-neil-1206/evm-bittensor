@@ -50,20 +50,23 @@ async function main() {
 
     // Get ethereum address that matches the private key from the secrets file
     const provider = new ethers.JsonRpcProvider(rpcUrl);
+    console.log("step 1");
     const signer = new ethers.Wallet(ethPrivateKey, provider);
+    console.log("step 2, sender addr: ", sender.address);
     const recipientEthereumAddress = signer.address;
-
+    console.log("step 3, recipient addr: ", recipientEthereumAddress);
     const ss58Address = convertH160ToSS58(recipientEthereumAddress);
     console.log(`Mirror: ${ss58Address}`);
     // Amount to send: 1 TAO on Substrate side = 1*10^9
     const amount = "1000000000";
 
     // Alice funds herself with 1M TAO
-    const txSudoSetBalance = api.tx.sudo.sudo(
-        api.tx.balances.forceSetBalance(sender.address, "1000000000000000")
-    );
-    await sendTransaction(api, txSudoSetBalance, sender);
-    console.log('Balace force-set');
+    // const txSudoSetBalance = api.tx.sudo.sudo(
+    //     api.tx.balances.forceSetBalance(sender.address, "10")
+    // );
+    // console.log("step 4");
+    // await sendTransaction(api, txSudoSetBalance, sender);
+    // console.log('Balace force-set');
 
     // Create a transfer transaction
     const transfer = api.tx.balances.transferKeepAlive(ss58Address, amount);

@@ -39,14 +39,21 @@ const contract = new ethers.Contract(contractAddress, abi, signer);
 // Function to perform the transfer
 async function makeTransfer() {
     try {
+        console.log("Starting transfer...", wsUrl);
         // Substrate ss58 address that will receive the transfer
         const wsProvider = new WsProvider(wsUrl);
+        console.log("Step 0.1");
         const api = await ApiPromise.create({ provider: wsProvider });
+        console.log("Step 0.2");
         const keyring = new Keyring({ type: 'sr25519' });
+        console.log("Step 0.3");
         const account = keyring.addFromUri(subSeed); // Your Substrate address private key/seed
+        console.log("Step 1");
 
         // Destination address can be replaced with any ss58 address here:
         const destinationAddress = account.address;
+        // const destinationAddress = "5GP1urYMrqZehHFKXPS2oeLRnrUko9CvYgQSagXNrg5SZrXg";
+        
         console.log(`Sending balance to ss58 address: ${destinationAddress}`);
 
         // Get the substrate address public key
@@ -55,7 +62,7 @@ async function makeTransfer() {
         console.log(`pubk = ${hex}`);
 
         // Sending 0.5 TAO along with the transaction
-        const value = BigInt(0.5 * 1e18).toString();
+        const value = BigInt(0.1 * 1e18).toString();
         const tx = await contract.transfer(pubk, { value });
         console.log('Transaction response:', tx);
 
