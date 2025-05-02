@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.24;
 //
 // This example demonstrates calling of ISubnet precompile
 // from another smart contract
 
-pragma solidity ^0.8.3;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 address constant ISUBTENSOR_SUBNET_ADDRESS = 0x0000000000000000000000000000000000000803;

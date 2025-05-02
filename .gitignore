@@ -131,3 +131,13 @@ dist
 
 # Config that contains secrets
 config.js
+
+# Hardhat files
+cache
+artifacts
+typechain
+typechain-types
+coverage.json
+coverage
+gas-report.txt
+

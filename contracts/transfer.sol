@@ -3,7 +3,7 @@
 // This example demonstrates calling of ISubtensorBalanceTransfer precompile 
 // from another smart contract
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.24;
 
 address constant ISUBTENSOR_BALANCE_TRANSFER_ADDRESS = 0x0000000000000000000000000000000000000800;
 bytes32 constant ALICE = 0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d;

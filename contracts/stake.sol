@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.24;
 // 
 // This example demonstrates calling of IStaking precompile 
 // from another smart contract
-
-pragma solidity ^0.8.3;
 
 address constant ISUBTENSOR_STAKING_ADDRESS = 0x0000000000000000000000000000000000000801;
 bytes32 constant HOTKEY = 0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d;
